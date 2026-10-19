@@ -127,8 +127,9 @@ export function ProjectCards({ locale, limit, items }: { locale: Locale; limit?:
   return (
     <ul className="grid gap-x-8 gap-y-14 md:grid-cols-12">
       {list.map((p, i) => {
-        const wide = i % 3 === 0;
-        const col = wide ? "md:col-span-7" : i % 3 === 1 ? "md:col-span-5 md:pt-24" : "md:col-span-6 md:col-start-4";
+        const k = i % 4;
+        const wide = k === 0;
+        const col = k === 0 ? "md:col-span-7" : k === 1 ? "md:col-span-5 md:pt-24" : k === 2 ? "md:col-span-5 md:col-start-2" : "md:col-span-6 md:col-start-7 md:pt-24";
         return (
           <Reveal as="li" key={p.id} delay={i * 80} className={col}>
             <article>

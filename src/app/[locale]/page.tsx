@@ -49,7 +49,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               ))}
             </div>
           </Reveal>
-          <ProjectCards locale={locale} limit={3} />
+          <ProjectCards locale={locale} limit={4} />
           <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
             <Action href={href(locale, "projects")}>{h.work.cta}</Action>
             <p className="max-w-md text-[0.8125rem] text-charcoal/55">{h.work.note}</p>

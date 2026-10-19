@@ -141,7 +141,7 @@ export const de: Dictionary = {
   projects: {
     eyebrow: "Projekte",
     headline: "Räume mit Handschrift.",
-    intro: "Ausgeführte Arbeiten in Wohnüberbauungen und Mehrfamilienhäusern: Küchen, Einbauschränke und Badmöbel, gefertigt bei Limani. Konkret, architektonisch, ohne Inszenierung.",
+    intro: "Ausgeführte Arbeiten in Villen, Chalets und Wohnüberbauungen: Küchen, Ankleiden, Weinkeller, Türen, Einbauten und Badmöbel, gefertigt bei Limani. Konkret, architektonisch, ohne Inszenierung.",
     note: "Weitere Referenzen werden dokumentiert. Konzeptstudien sind als solche bezeichnet.",
     filters: {
       residences: "Wohnbauten",

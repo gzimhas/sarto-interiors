@@ -139,7 +139,7 @@ export const en: Dictionary = {
   projects: {
     eyebrow: "Projects",
     headline: "Spaces with character.",
-    intro: "Executed work in residential developments and apartment buildings: kitchens, fitted wardrobes and bathroom furniture, made by Limani. Concrete, architectural, unstaged.",
+    intro: "Executed work in private villas, chalets and residential developments: kitchens, dressing rooms, wine cellars, doors, built-ins and bathroom furniture, made by Limani. Concrete, architectural, unstaged.",
     note: "Further references are being documented. Concept studies are labelled as such.",
     filters: {
       residences: "Residential",
