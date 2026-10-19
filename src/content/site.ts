@@ -369,15 +369,15 @@ export const projects: Project[] = [
     type: { de: "Büro, Serie", en: "Workplace, series" },
     location: { de: "Schweiz", en: "Switzerland" },
     image: "office-shelving",
-    gallery: ["office-shelving", "office-kitchen", "office-meeting", "office-dark", "office-open", "office-reception"],
+    gallery: ["office-shelving", "office-kitchen", "office-meeting", "office-dark", "office-open"],
     teaser: { de: "Regalwände, Sitzungszimmer, Teeküchen und Empfang: ein Ausbausystem für über 15 Büro- und Gewerbeflächen in der Schweiz.", en: "Shelving walls, meeting rooms, pantries and reception desks: one fit-out system for more than 15 office and commercial spaces in Switzerland." },
     intro: {
       de: [
-        "Über 15 Büro- und Gewerbeflächen in der Schweiz, darunter die 13 Standorte der smzh ag, ausgebaut mit einem gemeinsamen System: Regalwände aus Eiche mit beleuchteten Fächern, Schrankwände mit Lüftungsgittern für die Technik, Teeküchen, Sitzungszimmer, Empfangstheken.",
+        "Verschiedene Büros und Standorte in der Schweiz, über 15 Büro- und Gewerbeflächen, ausgebaut mit einem gemeinsamen System: Regalwände aus Eiche mit beleuchteten Fächern, Schrankwände mit Lüftungsgittern für die Technik, Teeküchen, Sitzungszimmer, Empfangstheken.",
         "Dasselbe Detail in Zürich wie in Chur, angepasst an jeden Grundriss und jedes Gebäude. Standard, wo er Zeit und Kosten spart; Mass, wo der Raum es verlangt.",
       ],
       en: [
-        "More than 15 office and commercial spaces in Switzerland, among them the 13 locations of smzh ag, fitted out with one shared system: oak shelving walls with lit compartments, wardrobe walls with ventilation grilles for the services, pantries, meeting rooms, reception desks.",
+        "Various offices and locations across Switzerland, more than 15 office and commercial spaces, fitted out with one shared system: oak shelving walls with lit compartments, wardrobe walls with ventilation grilles for the services, pantries, meeting rooms, reception desks.",
         "The same detail in Zurich as in Chur, adapted to every floor plan and building. Standard where it saves time and cost; bespoke where the room demands it.",
       ],
     },
@@ -385,14 +385,14 @@ export const projects: Project[] = [
       de: [
         { label: "Leistungen", value: "Regalwände, Schrankwände, Teeküchen, Sitzungszimmer, Empfang, Akustiklamellen" },
         { label: "Objekt", value: "Über 15 Büro- und Gewerbeflächen" },
-        { label: "Bauherrschaft", value: "Unternehmen, darunter smzh ag" },
+        { label: "Bauherrschaft", value: "Unternehmen" },
         { label: "Fertigung", value: "Limani" },
         { label: "Jahr", value: "TO_VERIFY" },
       ],
       en: [
         { label: "Scope", value: "Shelving walls, wardrobe walls, pantries, meeting rooms, reception, acoustic slats" },
         { label: "Building", value: "More than 15 office and commercial spaces" },
-        { label: "Client", value: "Companies, among them smzh ag" },
+        { label: "Client", value: "Companies" },
         { label: "Manufacturing", value: "Limani" },
         { label: "Year", value: "TO_VERIFY" },
       ],
