@@ -13,13 +13,13 @@ export function Footer({ locale }: { locale: Locale }) {
     <footer className="bg-cocoa text-ivory">
       <div className="mx-auto max-w-[1480px] px-gutter pb-10 pt-20">
         <div className="grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <Wordmark className="h-6 w-auto" />
             <p className="display mt-6 max-w-sm text-[1.6rem] leading-tight text-ivory/90">{t.footer.claim}</p>
             <p className="mt-3 max-w-sm text-[0.9375rem] text-ivory/60">{t.footer.statement}</p>
           </div>
 
-          <div className="md:col-span-2 md:col-start-7">
+          <div className="md:col-span-2 md:col-start-6">
             <p className="eyebrow mb-5 text-ivory/50">{t.footer.navLabel}</p>
             <ul className="space-y-2 text-[0.9375rem]">
               {footerNav.map((key) => (
@@ -32,7 +32,7 @@ export function Footer({ locale }: { locale: Locale }) {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-3">
             <p className="eyebrow mb-5 text-ivory/50">{t.footer.contactLabel}</p>
             <ul className="space-y-2 text-[0.9375rem] text-ivory/85">
               <li>{site.contact.address.street}</li>
@@ -40,8 +40,9 @@ export function Footer({ locale }: { locale: Locale }) {
                 {site.contact.address.zip} {site.contact.address.city}
               </li>
               <li className="pt-2">
-                <a href={`mailto:${site.contact.email}`} className="link-line break-all">
-                  {site.contact.email}
+                <a href={`mailto:${site.contact.email}`} className="link-line [overflow-wrap:anywhere]">
+                  {site.contact.email.split("@")[0]}@<wbr />
+                  {site.contact.email.split("@")[1]}
                 </a>
               </li>
               {site.contact.phone !== "TO_VERIFY" && <li>{v(site.contact.phone)}</li>}

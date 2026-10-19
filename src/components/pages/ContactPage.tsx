@@ -41,8 +41,9 @@ export function ContactPage({ locale }: { locale: Locale }) {
                 <div>
                   <dt className="text-charcoal/50">{c.direct.email}</dt>
                   <dd>
-                    <a href={`mailto:${site.contact.email}`} className="link-line break-all">
-                      {site.contact.email}
+                    <a href={`mailto:${site.contact.email}`} className="link-line [overflow-wrap:anywhere]">
+                      {site.contact.email.split("@")[0]}@<wbr />
+                      {site.contact.email.split("@")[1]}
                     </a>
                   </dd>
                 </div>
