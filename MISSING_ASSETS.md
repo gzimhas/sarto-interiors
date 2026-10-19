@@ -11,7 +11,7 @@ Everything below is marked in the code as `TO_VERIFY`, `CONCEPT_IMAGE` or `REAL_
 | Contact email | contact@sarto-interiors.ch (stated as «contact@sarto…» by GH; domain assumed, mailbox must exist before launch) | `site.ts → contact.email` |
 | Domains | sarto-interiors.ch (primary), sarto-interiors.com, sartointeriors.ch, sartoliving.ch → 308 to .ch. DNS at Hostpoint still to be set (A 76.76.21.21, CNAME www → cname.vercel-dns.com). | Vercel project |
 | Showroom plan | POSTARCH proposal design, 24 pages, dated 14.10.2026. Zones, areas, materials and appliance partners on the Showroom page come from this plan. | `showroom.zones`, `public/images/showroom-plan.jpg` |
-| Reference photography | Obermumpf AG, Gersau SZ, Grenchen SO (Liegenschaftsfotos, 19.10.2026): 25 photographs. Bellikon AG (villa) and Arosa GR (chalet apartment), 19.10.2026: 19 photographs (WhatsApp quality, 1280–1600 px; originals requested). All lightly colour-graded. | `public/images/projects/*`, `site.ts → projects` |
+| Reference photography | Obermumpf AG, Gersau SZ, Grenchen SO (Liegenschaftsfotos, 19.10.2026): 25 photographs. Bellikon AG (villa) and Arosa GR (chalet apartment), 19.10.2026: 19 photographs; Oberrohrdorf AG (private house), 19.10.2026: 10 photographs (phone, 1200–1600 px, `pending` until GH confirms scope and year) (WhatsApp quality, 1280–1600 px; originals requested). All lightly colour-graded. | `public/images/projects/*`, `site.ts → projects` |
 | Concept visuals | 22 tiles from the two SARTO moodboards, upscaled 2–3× (soft at full width). Labelled «Visualisierung» on the site. | `public/images/concept/*` |
 
 ## Blocking before public launch

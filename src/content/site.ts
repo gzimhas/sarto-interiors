@@ -90,6 +90,18 @@ export const images: Record<string, ImageAsset> = Object.fromEntries(
     concept("bedroom-wide", 1200, 717, "cocoa", "Schlafzimmer mit Einbauten und Seesicht", "Bedroom with fitted joinery and lake view"),
     concept("stone-island", 1200, 811, "stone", "Kücheninsel aus Naturstein, Blick auf den See", "Natural stone kitchen island, lake view"),
 
+    /* Reference: Oberrohrdorf AG (private house) */
+    real("oberrohrdorf-wardrobe", 1600, 1200, "cocoa", "Oberrohrdorf: Schrankwand in dunkler Eiche mit Glastüren und beleuchteten Fächern", "Oberrohrdorf: dark oak wardrobe wall with glass doors and lit compartments"),
+    real("oberrohrdorf-kitchen", 1600, 1200, "cocoa", "Oberrohrdorf: Küche in dunklem Holz mit Steininsel", "Oberrohrdorf: dark wood kitchen with stone island"),
+    real("oberrohrdorf-corridor", 1200, 1600, "cocoa", "Oberrohrdorf: Korridor mit durchlaufender Wandverkleidung", "Oberrohrdorf: corridor with continuous wall panelling"),
+    real("oberrohrdorf-wall", 1600, 1200, "cocoa", "Oberrohrdorf: Schrankwand, flächenbündig", "Oberrohrdorf: wardrobe wall, flush"),
+    real("oberrohrdorf-wardrobe-open", 1200, 1600, "cocoa", "Oberrohrdorf: Ankleide, Glastür geöffnet", "Oberrohrdorf: dressing room, glass door open"),
+    real("oberrohrdorf-switch", 1200, 1600, "cocoa", "Oberrohrdorf: Schalter in der Holzverkleidung, Detail", "Oberrohrdorf: switch set into the wood panelling, detail"),
+    real("oberrohrdorf-bath", 1600, 1200, "stone", "Oberrohrdorf: Bad in dunklem Marmor mit Waschtisch aus Stein", "Oberrohrdorf: dark marble bathroom with stone vanity"),
+    real("oberrohrdorf-tap", 1600, 1200, "stone", "Oberrohrdorf: Armatur in Bronze auf Marmor, Detail", "Oberrohrdorf: bronze tap on marble, detail"),
+    real("oberrohrdorf-tub", 1200, 1600, "stone-light", "Oberrohrdorf: freistehende Wanne vor Einbaumöbel", "Oberrohrdorf: freestanding bath in front of fitted joinery"),
+    real("oberrohrdorf-bar", 1200, 1600, "cocoa", "Oberrohrdorf: Bar in dunklem Holz", "Oberrohrdorf: bar in dark wood"),
+
     /* Reference: Obermumpf AG */
     real("obermumpf-07", 1600, 1067, "ivory", "Obermumpf: Küche mit Insel, grifflose Fronten und Steinabdeckung", "Obermumpf: kitchen with island, handleless fronts and stone worktop"),
     real("obermumpf-08", 1600, 1067, "ivory", "Obermumpf: Geräteturm mit integrierten Backöfen", "Obermumpf: appliance tower with integrated ovens"),
@@ -235,6 +247,44 @@ export const projects: Project[] = [
         { label: "Building", value: "Chalet apartment" },
         { label: "Client", value: "Private" },
         { label: "Manufacturing", value: "Limani" },
+      ],
+    },
+  },
+  {
+    id: "oberrohrdorf",
+    slug: { de: "oberrohrdorf", en: "oberrohrdorf" },
+    verification: "pending",
+    title: { de: "Oberrohrdorf", en: "Oberrohrdorf" },
+    category: "interiors",
+    type: { de: "Einfamilienhaus", en: "Private house" },
+    location: { de: "Aargau", en: "Aargau" },
+    image: "oberrohrdorf-wardrobe",
+    gallery: ["oberrohrdorf-wardrobe", "oberrohrdorf-kitchen", "oberrohrdorf-corridor", "oberrohrdorf-wall", "oberrohrdorf-wardrobe-open", "oberrohrdorf-switch", "oberrohrdorf-bath", "oberrohrdorf-tap", "oberrohrdorf-tub", "oberrohrdorf-bar"],
+    teaser: { de: "Dunkle Eiche, Stein und Bronze: Küche, Ankleide, Wandverkleidungen und Badmöbel aus einer Hand.", en: "Dark oak, stone and bronze: kitchen, dressing room, wall panelling and bathroom furniture from one hand." },
+    intro: {
+      de: [
+        "In Oberrohrdorf zieht sich eine Materialwahl durch das ganze Haus: dunkle Eiche an Küche, Schrankwänden und Korridoren, Stein als Insel und Waschtisch, Bronze an Armaturen und Griffen.",
+        "Die Ankleide arbeitet mit Glastüren und beleuchteten Fächern. Schalter und Technik sitzen in der Verkleidung. Im Bad trifft dunkler Marmor auf einen Waschtisch aus hellem Stein.",
+      ],
+      en: [
+        "In Oberrohrdorf one material palette runs through the whole house: dark oak on kitchen, wardrobe walls and corridors, stone for island and vanity, bronze on taps and handles.",
+        "The dressing room works with glass doors and lit compartments. Switches and services sit within the panelling. In the bathroom dark marble meets a vanity in light stone.",
+      ],
+    },
+    facts: {
+      de: [
+        { label: "Leistungen", value: "Küche, Ankleide, Schrankwände, Wandverkleidungen, Badmöbel, Bar" },
+        { label: "Objekt", value: "Einfamilienhaus" },
+        { label: "Bauherrschaft", value: "Privat" },
+        { label: "Fertigung", value: "Limani" },
+        { label: "Jahr", value: "TO_VERIFY" },
+      ],
+      en: [
+        { label: "Scope", value: "Kitchen, dressing room, wardrobe walls, wall panelling, bathroom furniture, bar" },
+        { label: "Building", value: "Private house" },
+        { label: "Client", value: "Private" },
+        { label: "Manufacturing", value: "Limani" },
+        { label: "Year", value: "TO_VERIFY" },
       ],
     },
   },
