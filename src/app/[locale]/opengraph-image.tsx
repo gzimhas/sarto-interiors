@@ -13,9 +13,8 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
   const { locale } = await params;
   const l = isLocale(locale) ? locale : "de";
   const t = getDictionary(l);
-  const inter = await readFile(
-    path.join(process.cwd(), "node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2")
-  ).catch(() => null);
+  // Static TTF (satori does not read WOFF2). Generated from the self-hosted Inter variable font, wght 400.
+  const inter = await readFile(path.join(process.cwd(), "src/app/fonts/inter-400.ttf")).catch(() => null);
 
   return new ImageResponse(
     (
