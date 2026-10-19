@@ -22,7 +22,7 @@ export function DevelopersPage({ locale }: { locale: Locale }) {
         <Container>
           <div className="grid gap-10 md:grid-cols-12">
             <Reveal className="md:col-span-7">
-              <EditorialImage id="group-bremgarten-kitchen" locale={locale} ratio="16 / 10" sizes="(min-width:768px) 58vw, 100vw" priority withCredit />
+              <EditorialImage id="ueberbauung-06" locale={locale} ratio="16 / 10" sizes="(min-width:768px) 58vw, 100vw" priority withCredit />
             </Reveal>
             <Reveal className="space-y-5 md:col-span-4 md:col-start-9 md:pt-10" delay={100}>
               {d.intro.map((p) => (

@@ -61,7 +61,7 @@ const concept = (id: string, w: number, h: number, surface: Surface, de: string,
 const real = (id: string, w: number, h: number, surface: Surface, de: string, en: string) =>
   img(id, { status: "REAL", src: `/images/projects/${id}.jpg`, w, h, surface, alt: { de, en }, brief: "Reference photograph. Scope and year to be confirmed by Limani (MISSING_ASSETS.md)." });
 
-const GROUP_CREDIT: Localized = { de: "Projekt der Gruppe · smzh Real Estate Advisory", en: "Group project · smzh Real Estate Advisory" };
+const GROUP_CREDIT: Localized = { de: "Projekt der Unternehmensgruppe", en: "Group project" };
 
 export const images: Record<string, ImageAsset> = Object.fromEntries(
   [
