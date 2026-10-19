@@ -187,7 +187,7 @@ export const de: Dictionary = {
         lede: "Die Küche ist der meistgenutzte Raum im Haus. Sie muss täglich funktionieren und über Jahre gut aussehen.",
         materials: {
           title: "Womit wir arbeiten",
-          text: "Nussbaum, Eiche und Räuchereiche als Furnier oder Massivholz. Naturstein, Keramik und Edelstahl für Abdeckungen. Lack mit offener oder geschlossener Pore. Messing, Bronze oder Schwarzstahl für Griffprofile und Kanten.",
+          text: "Eiche und Nussbaum, gleichwertig, dazu Räuchereiche: als Furnier oder Massivholz, die Wahl folgt Licht und Raum. Naturstein, Keramik und Edelstahl für Abdeckungen. Lack mit offener oder geschlossener Pore. Messing, Bronze oder Schwarzstahl für Griffprofile und Kanten.",
         },
         applications: {
           title: "Wo es zum Einsatz kommt",
@@ -256,7 +256,7 @@ export const de: Dictionary = {
         lede: "Wo Möbel aufhören und Architektur beginnt: Wandsysteme, Einbauten und Türen in einer Flucht.",
         materials: {
           title: "Womit wir arbeiten",
-          text: "Furnierte und massive Hölzer, Lackoberflächen, Stein, Metall und Textil. Akustisch wirksame Flächen, wo der Raum es verlangt.",
+          text: "Eiche oder Nussbaum, furniert oder massiv, dazu Lackoberflächen, Stein, Metall und Textil. Akustisch wirksame Flächen, wo der Raum es verlangt.",
         },
         applications: {
           title: "Wo es zum Einsatz kommt",

@@ -185,7 +185,7 @@ export const en: Dictionary = {
         lede: "The kitchen is the most used room in the house. It has to work every day and look right for years.",
         materials: {
           title: "What we work with",
-          text: "Walnut, oak and smoked oak as veneer or solid timber. Natural stone, ceramic and stainless steel for worktops. Lacquer with open or closed pore. Brass, bronze or blackened steel for handle profiles and edges.",
+          text: "Oak and walnut, on equal terms, plus smoked oak: as veneer or solid timber, the choice follows light and room. Natural stone, ceramic and stainless steel for worktops. Lacquer with open or closed pore. Brass, bronze or blackened steel for handle profiles and edges.",
         },
         applications: {
           title: "Where it is used",
@@ -254,7 +254,7 @@ export const en: Dictionary = {
         lede: "Where furniture ends and architecture begins: wall systems, fitted pieces and doors in one line.",
         materials: {
           title: "What we work with",
-          text: "Veneered and solid timbers, lacquered surfaces, stone, metal and textile. Acoustic surfaces where the room asks for them.",
+          text: "Oak or walnut, veneered or solid, plus lacquered surfaces, stone, metal and textile. Acoustic surfaces where the room asks for them.",
         },
         applications: {
           title: "Where it is used",
