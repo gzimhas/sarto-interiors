@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+/* Self-hosted fonts (no third-party font requests). */
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource-variable/inter";
+
+/* ------------------------------------------------------------------
+   SARTO design tokens
+   Dark Cocoa and Warm Ivory dominate. Walnut and Stone Taupe are
+   restrained accents. No gradients as decoration, no bright buttons.
+   ------------------------------------------------------------------ */
+@theme {
+  --color-cocoa: #201915;
+  --color-cocoa-soft: #2a211c;
+  --color-cocoa-line: #3a2f29;
+  --color-ivory: #f5f2ec; /* Soft Limestone (v4) */
+  --color-ivory-deep: #ede8e0;
+  --color-ivory-line: #ddd6cc;
+  --color-walnut: #6b4a35;
+  --color-walnut-deep: #4f3627;
+  --color-taupe: #c6bdb2; /* Light Stone (v4) */
+  --color-taupe-soft: #d8d0c6;
+  --color-charcoal: #28211d;
+
+  --font-display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --font-sans: "Inter Variable", "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  /* Editorial type scale (fluid). */
+  --text-hero: clamp(2.9rem, 7.2vw, 6.6rem);
+  --text-hero--line-height: 0.98;
+  --text-h1: clamp(2.6rem, 5.6vw, 5rem);
+  --text-h1--line-height: 1.02;
+  --text-h2: clamp(2.1rem, 4.2vw, 3.6rem);
+  --text-h2--line-height: 1.06;
+  --text-h3: clamp(1.5rem, 2.4vw, 2.1rem);
+  --text-h3--line-height: 1.15;
+  --text-lede: clamp(1.1rem, 1.5vw, 1.35rem);
+  --text-lede--line-height: 1.5;
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.18em;
+
+  --spacing-gutter: clamp(1.25rem, 4vw, 4rem);
+  --spacing-section: clamp(5rem, 11vw, 10rem);
+
+  --ease-editorial: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background: var(--color-walnut);
+    color: var(--color-ivory);
+  }
+  h1, h2, h3, .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-eyebrow);
+  line-height: var(--text-eyebrow--line-height);
+  letter-spacing: var(--text-eyebrow--letter-spacing);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Hairline text link with a drawn underline. */
+@utility link-line {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.2em;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  transition: background-size 420ms var(--ease-editorial);
+  &:hover, &:focus-visible { background-size: 32% 1px; }
+}
+
+/* Reveal on scroll. Opt-in via [data-reveal]; a no-op with reduced motion. */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 900ms var(--ease-editorial), transform 900ms var(--ease-editorial);
+  transition-delay: var(--reveal-delay, 0ms);
+  &.is-visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1; transform: none; transition: none;
+  }
+}
+
+/* Image reveal: a slow scale settle, restrained. */
+@utility img-settle {
+  transform: scale(1.04);
+  transition: transform 1600ms var(--ease-editorial);
+  .is-visible & { transform: scale(1); }
+  @media (prefers-reduced-motion: reduce) { transform: none; transition: none; }
+}
+
+/* ------------------------------------------------------------------
+   Concept-image placeholder surfaces.
+   These are not photographs. They stand in for REAL_IMAGE_REQUIRED
+   assets and are always labelled in the UI. Each material reads as a
+   quiet, physical surface: a plane of tone with a fine grain and a
+   single shadow edge, never a decorative gradient.
+   ------------------------------------------------------------------ */
+@layer components {
+.surface {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(var(--grain-angle, 90deg),
+      rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(var(--grain-angle, 90deg),
+      rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 23px);
+  mix-blend-mode: soft-light;
+  z-index: 1;
+}
+.surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--light-angle, 160deg),
+    rgba(255, 255, 255, 0.10) 0%, transparent 42%, rgba(0, 0, 0, 0.18) 100%);
+  z-index: 1;
+}
+.surface-walnut { background: #5e4030; --grain-angle: 86deg; }
+.surface-walnut-dark { background: #3b2820; --grain-angle: 92deg; }
+.surface-stone { background: #a69786; --grain-angle: 12deg; --light-angle: 200deg; }
+.surface-stone-light { background: #c9bdae; --grain-angle: 8deg; --light-angle: 200deg; }
+.surface-cocoa { background: #2a211c; --grain-angle: 90deg; }
+.surface-ivory { background: #e9e3d9; --grain-angle: 0deg; --light-angle: 140deg; }
+.surface-oak { background: #8a6b4f; --grain-angle: 88deg; }
+}
+
+/* A shadow gap across a surface, the recurring SARTO motif. */
+@layer components {
+.gap-line {
+  position: absolute;
+  left: 0; right: 0;
+  top: var(--gap-y, 62%);
+  height: 2px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  z-index: 2;
+}
+.gap-line-v {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: var(--gap-x, 38%);
+  width: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.07);
+  z-index: 2;
+}
+}
