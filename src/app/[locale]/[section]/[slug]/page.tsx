@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (sec === "projects") {
     const p = projectFromSlug(locale, slug);
     if (!p || !isPublished(p)) return {};
-    return pageMetadata({ locale, section: "projects", project: p, title: `${p.title[locale]} · ${p.location[locale]}`, description: p.teaser[locale] });
+    return pageMetadata({ locale, section: "projects", project: p, title: p.title[locale], description: p.teaser[locale] });
   }
   return {};
 }

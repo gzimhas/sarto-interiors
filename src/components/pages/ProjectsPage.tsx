@@ -107,7 +107,6 @@ export function ProjectDetailPage({ locale, project }: { locale: Locale; project
               <Eyebrow>{t.common.nextProject}</Eyebrow>
               <Link href={href(locale, "projects", next.slug[locale])} className="display link-line mt-4 inline-block text-h2">
                 {next.title[locale]}
-                <span className="text-charcoal/45"> · {next.location[locale]}</span>
               </Link>
             </div>
             <Link href={href(locale, "projects")} className="link-line text-[0.875rem] font-medium">

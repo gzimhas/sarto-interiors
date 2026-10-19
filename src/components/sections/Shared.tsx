@@ -144,10 +144,7 @@ export function ProjectCards({ locale, limit, items }: { locale: Locale; limit?:
                   />
                 </div>
                 <div className="mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                  <h3 className="display text-h3">
-                    {p.title[locale]}
-                    <span className="text-charcoal/45"> · {p.location[locale]}</span>
-                  </h3>
+                  <h3 className="display text-h3">{p.title[locale]}</h3>
                   <p className="eyebrow text-charcoal/45">{p.type[locale]}</p>
                 </div>
                 <p className="mt-2 max-w-md text-[0.9375rem] text-charcoal/70">{p.teaser[locale]}</p>
