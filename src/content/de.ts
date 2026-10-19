@@ -548,8 +548,7 @@ export const de: Dictionary = {
       text: [
         "SARTO ist eine Marke der Fernsicht Immobilien AG.",
         "Fernsicht Immobilien AG, Industriestrasse 160/162, 8957 Spreitenbach, Schweiz.",
-        "Handelsregister: TO_VERIFY. UID: TO_VERIFY.",
-        "E-Mail: contact@sarto-interiors.ch. Telefon: TO_VERIFY.",
+        "E-Mail: contact@sarto-interiors.ch.",
         "Fertigung: Limani. Showroom-Planung: POSTARCH.",
       ],
     },

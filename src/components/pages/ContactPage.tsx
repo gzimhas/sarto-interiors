@@ -46,10 +46,12 @@ export function ContactPage({ locale }: { locale: Locale }) {
                     </a>
                   </dd>
                 </div>
-                <div>
-                  <dt className="text-charcoal/50">{c.direct.phone}</dt>
-                  <dd>{v(site.contact.phone)}</dd>
-                </div>
+                {site.contact.phone !== "TO_VERIFY" && (
+                  <div>
+                    <dt className="text-charcoal/50">{c.direct.phone}</dt>
+                    <dd>{v(site.contact.phone)}</dd>
+                  </div>
+                )}
                 <div>
                   <dt className="text-charcoal/50">{t.nav.labels.showroom}</dt>
                   <dd>

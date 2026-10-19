@@ -44,7 +44,7 @@ export function Footer({ locale }: { locale: Locale }) {
                   {site.contact.email}
                 </a>
               </li>
-              <li>{v(site.contact.phone)}</li>
+              {site.contact.phone !== "TO_VERIFY" && <li>{v(site.contact.phone)}</li>}
             </ul>
           </div>
 
