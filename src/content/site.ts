@@ -105,6 +105,14 @@ export const images: Record<string, ImageAsset> = Object.fromEntries(
     real("efh-tub", 1200, 1600, "stone-light", "Einfamilienhaus: freistehende Wanne vor Einbaumöbel", "Family house: freestanding bath in front of fitted joinery"),
     real("efh-bar", 1200, 1600, "cocoa", "Einfamilienhaus: Bar in dunklem Holz", "Family house: bar in dark wood"),
 
+    /* Reference: advisory offices, 13 locations (office) */
+    real("office-shelving", 1600, 1200, "oak", "Beratungsbüro: Sitzungszimmer mit Regalwand aus Eiche, beleuchteten Fächern und Glastüre zur Teeküche", "Advisory office: meeting room with oak shelving wall, lit compartments and glass door to the pantry"),
+    real("office-kitchen", 1200, 1600, "oak", "Beratungsbüro: Teeküche ganz in Eiche mit schwarzer Abdeckung", "Advisory office: pantry entirely in oak with black worktop"),
+    real("office-meeting", 1600, 1200, "oak", "Beratungsbüro: Sitzungszimmer mit Regalwand, Sideboard und Akustikdecke", "Advisory office: meeting room with shelving wall, sideboard and acoustic ceiling"),
+    real("office-dark", 1200, 1600, "cocoa", "Beratungsbüro: Besprechungsraum mit Lamellenwand und Schrankfront in dunkler Esche", "Advisory office: meeting room with slatted wall and cabinet front in dark ash"),
+    real("office-open", 1600, 1200, "oak", "Beratungsbüro: Arbeitsbereich mit Schrankwand, Regal und Akustiklamellen aus Eiche", "Advisory office: workspace with wardrobe wall, shelving and oak acoustic slats"),
+    real("office-reception", 1024, 768, "stone", "Beratungsbüro: Empfangstheke aus Schwarzstahl und hellem Holz", "Advisory office: reception desk in blackened steel and light wood"),
+
     /* Reference: development, 58 apartments (ueberbauung58) */
     real("ueberbauung58-divider", 2800, 1867, "ivory", "Überbauung: Raumteiler mit Regal, Schrankwand und Esstisch im Studio", "Development: room divider with shelving, wardrobe wall and dining table in the studio"),
     real("ueberbauung58-kitchen-view", 2576, 1717, "ivory", "Überbauung: Küchenzeile mit Geräteturm vor der Terrasse", "Development: kitchen run with appliance tower in front of the terrace"),
@@ -347,6 +355,44 @@ export const projects: Project[] = [
         { label: "Scope", value: "Kitchens, bathroom furniture, fitted wardrobes, room dividers, entrance wardrobes" },
         { label: "Building", value: "Two apartment buildings, 58 apartments" },
         { label: "Client", value: "Group company, sold to a pension fund" },
+        { label: "Manufacturing", value: "Limani" },
+        { label: "Year", value: "TO_VERIFY" },
+      ],
+    },
+  },
+  {
+    id: "office",
+    slug: { de: "bueros-gewerbe-15-standorte", en: "offices-commercial-15-locations" },
+    verification: "pending",
+    title: { de: "Büros und Gewerbe, über 15 Standorte", en: "Offices and commercial, 15+ locations" },
+    category: "workplace",
+    type: { de: "Büro, Serie", en: "Workplace, series" },
+    location: { de: "Schweiz", en: "Switzerland" },
+    image: "office-shelving",
+    gallery: ["office-shelving", "office-kitchen", "office-meeting", "office-dark", "office-open", "office-reception"],
+    teaser: { de: "Regalwände, Sitzungszimmer, Teeküchen und Empfang: ein Ausbausystem für über 15 Büro- und Gewerbeflächen in der Schweiz.", en: "Shelving walls, meeting rooms, pantries and reception desks: one fit-out system for more than 15 office and commercial spaces in Switzerland." },
+    intro: {
+      de: [
+        "Über 15 Büro- und Gewerbeflächen in der Schweiz, darunter die 13 Standorte der smzh ag, ausgebaut mit einem gemeinsamen System: Regalwände aus Eiche mit beleuchteten Fächern, Schrankwände mit Lüftungsgittern für die Technik, Teeküchen, Sitzungszimmer, Empfangstheken.",
+        "Dasselbe Detail in Zürich wie in Chur, angepasst an jeden Grundriss und jedes Gebäude. Standard, wo er Zeit und Kosten spart; Mass, wo der Raum es verlangt.",
+      ],
+      en: [
+        "More than 15 office and commercial spaces in Switzerland, among them the 13 locations of smzh ag, fitted out with one shared system: oak shelving walls with lit compartments, wardrobe walls with ventilation grilles for the services, pantries, meeting rooms, reception desks.",
+        "The same detail in Zurich as in Chur, adapted to every floor plan and building. Standard where it saves time and cost; bespoke where the room demands it.",
+      ],
+    },
+    facts: {
+      de: [
+        { label: "Leistungen", value: "Regalwände, Schrankwände, Teeküchen, Sitzungszimmer, Empfang, Akustiklamellen" },
+        { label: "Objekt", value: "Über 15 Büro- und Gewerbeflächen" },
+        { label: "Bauherrschaft", value: "Unternehmen, darunter smzh ag" },
+        { label: "Fertigung", value: "Limani" },
+        { label: "Jahr", value: "TO_VERIFY" },
+      ],
+      en: [
+        { label: "Scope", value: "Shelving walls, wardrobe walls, pantries, meeting rooms, reception, acoustic slats" },
+        { label: "Building", value: "More than 15 office and commercial spaces" },
+        { label: "Client", value: "Companies, among them smzh ag" },
         { label: "Manufacturing", value: "Limani" },
         { label: "Year", value: "TO_VERIFY" },
       ],

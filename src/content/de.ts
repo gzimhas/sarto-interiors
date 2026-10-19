@@ -48,6 +48,7 @@ export const de: Dictionary = {
       bathrooms: "Badmöbel",
       interiors: "Innenausbau",
       hospitality: "Hospitality",
+      workplace: "Büro & Gewerbe",
       residences: "Wohnhäuser",
     },
     gallery: "Bilder",
@@ -141,13 +142,14 @@ export const de: Dictionary = {
   projects: {
     eyebrow: "Projekte",
     headline: "Räume mit Handschrift.",
-    intro: "Ausgeführte Arbeiten in Villen, Chalets, Wohnüberbauungen und denkmalgeschützten Altstadthäusern: Küchen, Ankleiden, Weinkeller, Türen, Einbauten und Badmöbel, vom Einzelstück bis zur Serie von 58 Wohnungen, gefertigt bei Limani.",
+    intro: "Ausgeführte Arbeiten in Villen, Chalets, Wohnüberbauungen und denkmalgeschützten Altstadthäusern: Küchen, Ankleiden, Weinkeller, Türen, Einbauten und Badmöbel, vom Einzelstück bis zur Serie von 58 Wohnungen und über 15 Büroflächen, gefertigt bei Limani.",
     note: "Weitere Referenzen werden dokumentiert. Konzeptstudien sind als solche bezeichnet.",
     filters: {
       residences: "Wohnbauten",
       kitchens: "Küchen",
       wardrobes: "Ankleiden",
       hospitality: "Hospitality",
+      workplace: "Büro & Gewerbe",
     },
     all: "Alle",
     empty: "In dieser Kategorie sind noch keine freigegebenen Projekte dokumentiert.",

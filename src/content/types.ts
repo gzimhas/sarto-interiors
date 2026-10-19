@@ -36,7 +36,7 @@ export type ImageAsset = {
   brief: string;
 };
 
-export type ProjectCategory = ExpertiseKey | "hospitality";
+export type ProjectCategory = ExpertiseKey | "hospitality" | "workplace";
 
 export type Project = {
   id: string;
