@@ -191,11 +191,13 @@ export const projects: Project[] = [
       de: [
         { label: "Leistungen", value: "Küche, Weinkeller, Ankleide, Türen, Einbauten, Badmöbel" },
         { label: "Objekt", value: "Villa" },
+        { label: "Bauherrschaft", value: "Eigenprojekt" },
         { label: "Fertigung", value: "Limani" },
       ],
       en: [
         { label: "Scope", value: "Kitchen, wine cellar, dressing room, doors, built-ins, bathroom furniture" },
         { label: "Building", value: "Private villa" },
+        { label: "Client", value: "Own project" },
         { label: "Manufacturing", value: "Limani" },
       ],
     },
@@ -225,11 +227,13 @@ export const projects: Project[] = [
       de: [
         { label: "Leistungen", value: "Ankleide, Küche, Schrankwände, Türen, Badmöbel" },
         { label: "Objekt", value: "Chalet-Wohnung" },
+        { label: "Bauherrschaft", value: "Eigenprojekt" },
         { label: "Fertigung", value: "Limani" },
       ],
       en: [
         { label: "Scope", value: "Dressing room, kitchen, wardrobe walls, doors, bathroom furniture" },
         { label: "Building", value: "Chalet apartment" },
+        { label: "Client", value: "Own project" },
         { label: "Manufacturing", value: "Limani" },
       ],
     },
