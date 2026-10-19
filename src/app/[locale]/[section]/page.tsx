@@ -55,10 +55,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     showroom: t.showroom.lede,
     contact: t.contact.lede,
   };
+  const label = t.nav.labels[key];
+  const headline = titles[key].replace(/\.$/, "");
   return pageMetadata({
     locale,
     section: key,
-    title: `${t.nav.labels[key]} · ${titles[key]}`,
+    title: headline === label ? label : `${label} · ${headline}`,
     description: descriptions[key],
   });
 }

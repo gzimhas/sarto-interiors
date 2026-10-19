@@ -22,11 +22,13 @@ export function pageMetadata({ locale, section, expertise, project, title, descr
   for (const l of locales) languages[htmlLang[l]] = `${site.url}${path(l)}`;
   languages["x-default"] = `${site.url}${path("de")}`;
 
+  // The layout applies `meta.titleTemplate` ("%s · SARTO") to page titles; the
+  // homepage opts out with an absolute title so the brand is not repeated.
   const fullTitle = title ? t.meta.titleTemplate.replace("%s", title) : `${site.name} · ${site.claim}`;
   const desc = description ?? t.meta.description;
 
   return {
-    title: fullTitle,
+    title: title ? title : { absolute: fullTitle },
     description: desc,
     alternates: { canonical: `${site.url}${path(locale)}`, languages },
     openGraph: {
