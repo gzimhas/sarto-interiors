@@ -139,7 +139,7 @@ export const en: Dictionary = {
   projects: {
     eyebrow: "Projects",
     headline: "Spaces with character.",
-    intro: "Executed work in private villas, chalets and residential developments: kitchens, dressing rooms, wine cellars, doors, built-ins and bathroom furniture, made by Limani. Concrete, architectural, unstaged.",
+    intro: "Executed work in private villas, chalets, residential developments and listed old-town houses: kitchens, dressing rooms, wine cellars, doors, built-ins and bathroom furniture, from a single piece to a series of 58 apartments, made by Limani.",
     note: "Further references are being documented. Concept studies are labelled as such.",
     filters: {
       residences: "Residential",
@@ -333,7 +333,7 @@ export const en: Dictionary = {
         title: "Hospitality & Commercial",
         text: "Hotels, serviced apartments, selected commercial spaces.",
         points: ["Consistent material and execution standards", "Repeatable units across many rooms", "Coordination with operator and site management"],
-        image: "group-bremgarten-hotel",
+        image: "hotel-truss",
       },
     ],
     themesLabel: "What a project needs",

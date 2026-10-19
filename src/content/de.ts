@@ -141,7 +141,7 @@ export const de: Dictionary = {
   projects: {
     eyebrow: "Projekte",
     headline: "Räume mit Handschrift.",
-    intro: "Ausgeführte Arbeiten in Villen, Chalets und Wohnüberbauungen: Küchen, Ankleiden, Weinkeller, Türen, Einbauten und Badmöbel, gefertigt bei Limani. Konkret, architektonisch, ohne Inszenierung.",
+    intro: "Ausgeführte Arbeiten in Villen, Chalets, Wohnüberbauungen und denkmalgeschützten Altstadthäusern: Küchen, Ankleiden, Weinkeller, Türen, Einbauten und Badmöbel, vom Einzelstück bis zur Serie von 58 Wohnungen, gefertigt bei Limani.",
     note: "Weitere Referenzen werden dokumentiert. Konzeptstudien sind als solche bezeichnet.",
     filters: {
       residences: "Wohnbauten",
@@ -335,7 +335,7 @@ export const de: Dictionary = {
         title: "Hospitality & Commercial",
         text: "Hotels, Serviced Apartments, ausgewählte Gewerbeflächen.",
         points: ["Einheitliche Material- und Ausführungsstandards", "Wiederholbare Einheiten über mehrere Räume", "Abstimmung mit Betreiber und Bauleitung"],
-        image: "group-bremgarten-hotel",
+        image: "hotel-truss",
       },
     ],
     themesLabel: "Was ein Projekt braucht",

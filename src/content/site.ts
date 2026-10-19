@@ -61,7 +61,10 @@ const concept = (id: string, w: number, h: number, surface: Surface, de: string,
 const real = (id: string, w: number, h: number, surface: Surface, de: string, en: string) =>
   img(id, { status: "REAL", src: `/images/projects/${id}.jpg`, w, h, surface, alt: { de, en }, brief: "Reference photograph. Scope and year to be confirmed by Limani (MISSING_ASSETS.md)." });
 
-const GROUP_CREDIT: Localized = { de: "Projekt der Unternehmensgruppe", en: "Group project" };
+/** Real photographs served from the group CMS (cms.smzh.ch). SARTO/Limani work, no credit. */
+const remote = (id: string, file: string, w: number, h: number, surface: Surface, de: string, en: string) =>
+  img(id, { status: "REAL", src: `https://cms.smzh.ch/uploads/${file}.jpg`, w, h, surface, alt: { de, en }, brief: "Reference photograph from the group CMS. Copy to /public before launch." });
+
 
 export const images: Record<string, ImageAsset> = Object.fromEntries(
   [
@@ -101,6 +104,35 @@ export const images: Record<string, ImageAsset> = Object.fromEntries(
     real("efh-tap", 1600, 1200, "stone", "Einfamilienhaus: Armatur in Bronze auf Marmor, Detail", "Family house: bronze tap on marble, detail"),
     real("efh-tub", 1200, 1600, "stone-light", "Einfamilienhaus: freistehende Wanne vor Einbaumöbel", "Family house: freestanding bath in front of fitted joinery"),
     real("efh-bar", 1200, 1600, "cocoa", "Einfamilienhaus: Bar in dunklem Holz", "Family house: bar in dark wood"),
+
+    /* Reference: development, 58 apartments (ueberbauung58) */
+    real("ueberbauung58-divider", 2800, 1867, "ivory", "Überbauung: Raumteiler mit Regal, Schrankwand und Esstisch im Studio", "Development: room divider with shelving, wardrobe wall and dining table in the studio"),
+    real("ueberbauung58-kitchen-view", 2576, 1717, "ivory", "Überbauung: Küchenzeile mit Geräteturm vor der Terrasse", "Development: kitchen run with appliance tower in front of the terrace"),
+    real("ueberbauung58-kitchen", 2576, 1717, "ivory", "Überbauung: Küche mit Steinrückwand und Lichtband", "Development: kitchen with stone splashback and light strip"),
+    real("ueberbauung58-shelf", 2576, 1717, "ivory", "Überbauung: Regal als Raumteiler, Blick in die Küche", "Development: shelving as room divider, view into the kitchen"),
+    real("ueberbauung58-studio", 2576, 1717, "ivory", "Überbauung: Studio mit Schrankwand und Bettnische", "Development: studio with wardrobe wall and bed niche"),
+    real("ueberbauung58-living", 2576, 1717, "ivory", "Überbauung: Küche, Sofa und Medienmöbel im Studio", "Development: kitchen, sofa and media unit in the studio"),
+    real("ueberbauung58-wardrobe", 2576, 1717, "ivory", "Überbauung: Einbauschrank mit Glastüren im Schlafzimmer", "Development: fitted wardrobe with glass doors in the bedroom"),
+    real("ueberbauung58-kitchen-l", 2576, 1717, "ivory", "Überbauung: Küche über Eck mit Geräteturm und Garderobe", "Development: corner kitchen with appliance tower and entrance wardrobe"),
+    real("ueberbauung58-bath", 2576, 1717, "stone-light", "Überbauung: Waschtischmöbel mit Spiegelschrank", "Development: vanity unit with mirror cabinet"),
+    real("ueberbauung58-shower", 2576, 1717, "stone-light", "Überbauung: Bad mit Dusche und Waschtisch", "Development: bathroom with shower and vanity"),
+    real("ueberbauung58-tap", 2576, 1717, "stone-light", "Überbauung: Spüle und Armatur, Detail", "Development: sink and tap, detail"),
+
+    /* Reference: former hotel, 16 furnished apartments (hotel). Remote, smzh CMS. */
+    remote("hotel-living", "bremgarten_sonne_6_b34c479e1c", 1200, 800, "oak", "Ehemaliges Hotel: Schlaf- und Wohnbereich einer möblierten Wohnung", "Former hotel: sleeping and living area of a furnished apartment"),
+    remote("hotel-kitchen", "bremgarten_sonne_4_c49ebaa1b5", 1200, 800, "oak", "Ehemaliges Hotel: möblierte Wohnung mit Wohnküche", "Former hotel: furnished apartment with living kitchen"),
+    remote("hotel-truss", "bremgarten_sonne_8_d8d04f572a", 1200, 800, "oak", "Ehemaliges Hotel: historischer Dachstuhl im Wohnraum", "Former hotel: historic roof truss in the living room"),
+    remote("hotel-beams", "bremgarten_sonne_5_8982b419f8", 1200, 800, "oak", "Ehemaliges Hotel: Wohnraum mit freigelegtem Gebälk", "Former hotel: living room with exposed beams"),
+    remote("hotel-bath", "bremgarten_sonne_7_03920a54eb", 1200, 1800, "stone-light", "Ehemaliges Hotel: neues Bad mit bodenebener Dusche", "Former hotel: new bathroom with level-access shower"),
+    remote("hotel-stair", "bremgarten_sonne_9_b65b0ddd3a", 1200, 800, "oak", "Ehemaliges Hotel: Erschliessung im Bestand", "Former hotel: circulation within the existing structure"),
+
+    /* Reference: old-town house, 5 apartments (altstadt). Remote, smzh CMS. */
+    remote("altstadt-kitchen", "bremgarten_drei_koenige_3_6171f430db", 1200, 800, "ivory", "Altstadthaus: neue Wohnküche mit Steinabdeckung", "Old-town house: new living kitchen with stone worktop"),
+    remote("altstadt-living", "bremgarten_drei_koenige_4_e7c942f083", 1200, 800, "oak", "Altstadthaus: Wohnraum mit Fischgrätparkett und Einbauten", "Old-town house: living room with herringbone parquet and built-ins"),
+    remote("altstadt-bedroom", "bremgarten_drei_koenige_5_06c24ae543", 1200, 800, "ivory", "Altstadthaus: Schlafzimmer mit Einbauschränken", "Old-town house: bedroom with fitted wardrobes"),
+    remote("altstadt-attic", "bremgarten_drei_koenige_6_e0634d1973", 1200, 800, "oak", "Altstadthaus: Küche unter dem freigelegten Dachstuhl", "Old-town house: kitchen under the exposed roof truss"),
+    remote("altstadt-bath", "bremgarten_drei_koenige_7_df9233467c", 1200, 1800, "stone-light", "Altstadthaus: neues Bad mit bodenebener Dusche", "Old-town house: new bathroom with level-access shower"),
+    remote("altstadt-stair", "bremgarten_drei_koenige_8_f9c41de577", 1200, 800, "oak", "Altstadthaus: freitragende Treppe zwischen erhaltenem Gebälk", "Old-town house: freestanding stair between preserved beams"),
 
     /* Reference: apartment building, 9 units (mfh9) */
     real("mfh9-07", 1600, 1067, "ivory", "Mehrfamilienhaus: Küche mit Insel, grifflose Fronten und Steinabdeckung", "Apartment building: kitchen with island, handleless fronts and stone worktop"),
@@ -155,12 +187,6 @@ export const images: Record<string, ImageAsset> = Object.fromEntries(
     real("chalet-living", 1280, 853, "ivory", "Chalet: Wohnraum mit Kamin und Esstisch", "Chalet: living room with fireplace and dining table"),
     real("chalet-balcony", 1280, 853, "ivory", "Chalet: Sitznische am Fenster mit Blick auf die Berge", "Chalet: window seat with mountain view"),
     real("chalet-house", 1280, 964, "stone", "Chalet: das Haus im Winter", "Chalet: the house in winter"),
-
-    /* Group projects (smzh Real Estate Advisory). Remote, credited. */
-    img("group-kuesnacht-hide", { status: "REAL", src: "https://cms.smzh.ch/uploads/kusnacht_hide_6_978f160c20.jpg", w: 1600, h: 1067, surface: "stone-light", alt: { de: "Küsnacht ZH, HIDE: Schlafzimmer mit Terrasse", en: "Küsnacht ZH, HIDE: bedroom with terrace" }, credit: GROUP_CREDIT, brief: "Private residence example. Group project; not an executed SARTO interior." }),
-    img("group-killwangen", { status: "REAL", src: "https://cms.smzh.ch/uploads/Aussenansicht_der_fertigen_Ueberbauung_36773d3b2e.jpg", w: 1600, h: 1067, surface: "stone", alt: { de: "Killwangen AG: zwei Mehrfamilienhäuser", en: "Killwangen AG: two apartment buildings" }, credit: GROUP_CREDIT, brief: "Residential development example. Group project." }),
-    img("group-bremgarten-hotel", { status: "REAL", src: "https://cms.smzh.ch/uploads/bremgarten_sonne_8_d8d04f572a.jpg", w: 1600, h: 1067, surface: "oak", alt: { de: "Bremgarten AG: Hotelzimmer nach Umnutzung", en: "Bremgarten AG: hotel room after conversion" }, credit: GROUP_CREDIT, brief: "Hospitality example. Group project." }),
-    img("group-bremgarten-kitchen", { status: "REAL", src: "https://cms.smzh.ch/uploads/bremgarten_drei_koenige_3_6171f430db.jpg", w: 1600, h: 1067, surface: "ivory", alt: { de: "Bremgarten AG: Küche in der Altstadtliegenschaft", en: "Bremgarten AG: kitchen in the old-town property" }, credit: GROUP_CREDIT, brief: "Residential example. Group project." }),
 
     /* Still required */
     img("workshop-wide", { status: "REAL_IMAGE_REQUIRED", surface: "stone-light", alt: { de: "Werkstatt von Limani", en: "The Limani workshop" }, brief: "Craft / Our Story. Wide view of the real workshop, people at work, natural light. Landscape, min. 2800px." }),
@@ -283,6 +309,120 @@ export const projects: Project[] = [
         { label: "Scope", value: "Kitchen, dressing room, wardrobe walls, wall panelling, bathroom furniture, bar" },
         { label: "Building", value: "Private house" },
         { label: "Client", value: "Private" },
+        { label: "Manufacturing", value: "Limani" },
+        { label: "Year", value: "TO_VERIFY" },
+      ],
+    },
+  },
+  {
+    id: "ueberbauung58",
+    slug: { de: "ueberbauung-58-wohnungen", en: "development-58-apartments" },
+    verification: "pending",
+    title: { de: "Überbauung mit 58 Wohnungen", en: "Development with 58 apartments" },
+    category: "kitchens",
+    type: { de: "Wohnbau, zwei Häuser", en: "Residential, two buildings" },
+    location: { de: "Limmattal", en: "Limmat Valley" },
+    image: "ueberbauung58-divider",
+    gallery: ["ueberbauung58-divider", "ueberbauung58-kitchen-view", "ueberbauung58-kitchen", "ueberbauung58-shelf", "ueberbauung58-studio", "ueberbauung58-living", "ueberbauung58-wardrobe", "ueberbauung58-kitchen-l", "ueberbauung58-bath", "ueberbauung58-shower", "ueberbauung58-tap"],
+    teaser: { de: "58 Küchen, 58 Bäder, Schrankwände und Raumteiler in Serie: ein Ausbaustandard für zwei Mehrfamilienhäuser.", en: "58 kitchens, 58 bathrooms, wardrobe walls and room dividers in series: one fit-out standard for two apartment buildings." },
+    intro: {
+      de: [
+        "Zwei Mehrfamilienhäuser mit 58 Wohnungen, als Anlageobjekt für eine Pensionskasse erstellt. Der Innenausbau folgt einem Standard: grifflose Küchen mit Steinrückwand und Lichtband, Waschtischmöbel mit Spiegelschrank, Einbauschränke mit Glastüren.",
+        "In den Studios übernimmt das Möbel die Raumaufteilung: ein Regal als Raumteiler mit Medienmöbel, dahinter die Schrankwand mit Bettnische. Gleiche Details in jeder Wohnung, angepasst an jeden Grundriss.",
+      ],
+      en: [
+        "Two apartment buildings with 58 apartments, built as an investment property for a pension fund. The fit-out follows one standard: handleless kitchens with stone splashback and light strip, vanity units with mirror cabinet, fitted wardrobes with glass doors.",
+        "In the studios the joinery organises the room: shelving as a room divider with media unit, behind it the wardrobe wall with bed niche. The same details in every apartment, adapted to every floor plan.",
+      ],
+    },
+    facts: {
+      de: [
+        { label: "Leistungen", value: "Küchen, Badmöbel, Einbauschränke, Raumteiler, Garderoben" },
+        { label: "Objekt", value: "Zwei Mehrfamilienhäuser, 58 Wohnungen" },
+        { label: "Bauherrschaft", value: "Unternehmensgruppe, verkauft an eine Pensionskasse" },
+        { label: "Fertigung", value: "Limani" },
+        { label: "Jahr", value: "TO_VERIFY" },
+      ],
+      en: [
+        { label: "Scope", value: "Kitchens, bathroom furniture, fitted wardrobes, room dividers, entrance wardrobes" },
+        { label: "Building", value: "Two apartment buildings, 58 apartments" },
+        { label: "Client", value: "Group company, sold to a pension fund" },
+        { label: "Manufacturing", value: "Limani" },
+        { label: "Year", value: "TO_VERIFY" },
+      ],
+    },
+  },
+  {
+    id: "hotel",
+    slug: { de: "ehemaliges-hotel-16-wohnungen", en: "former-hotel-16-apartments" },
+    verification: "pending",
+    title: { de: "Ehemaliges Hotel, 16 möblierte Wohnungen", en: "Former hotel, 16 furnished apartments" },
+    category: "hospitality",
+    type: { de: "Umnutzung, denkmalgeschützt", en: "Conversion, listed building" },
+    location: { de: "Aargau", en: "Aargau" },
+    image: "hotel-truss",
+    gallery: ["hotel-truss", "hotel-living", "hotel-kitchen", "hotel-beams", "hotel-bath", "hotel-stair"],
+    teaser: { de: "Möblierte Wohnungen über zwei Restaurants: Küchen, Einbauten und Bäder unter dem historischen Dachstuhl.", en: "Furnished apartments above two restaurants: kitchens, built-ins and bathrooms under the historic roof truss." },
+    intro: {
+      de: [
+        "Ein Altstadthotel wird zu 16 möblierten Mietwohnungen über zwei Restaurants. Das Gebäude steht unter Denkmalschutz; das historische Gebälk bleibt in den Wohnräumen sichtbar.",
+        "Der Ausbau arbeitet mit dem Bestand: Wohnküchen und Einbauten unter schrägen Decken, neue Bäder mit bodenebener Dusche, Möblierung als Teil des Konzepts.",
+      ],
+      en: [
+        "An old-town hotel becomes 16 furnished rental apartments above two restaurants. The building is listed; the historic beams stay visible in the living rooms.",
+        "The fit-out works with the existing fabric: living kitchens and built-ins under sloping ceilings, new bathrooms with level-access showers, furnishing as part of the concept.",
+      ],
+    },
+    facts: {
+      de: [
+        { label: "Leistungen", value: "Wohnküchen, Einbauten, Badmöbel, Möblierung" },
+        { label: "Objekt", value: "Umnutzung Hotel, 16 Wohnungen, 2 Restaurants" },
+        { label: "Bauherrschaft", value: "Unternehmensgruppe" },
+        { label: "Fertigung", value: "Limani" },
+        { label: "Jahr", value: "TO_VERIFY" },
+      ],
+      en: [
+        { label: "Scope", value: "Living kitchens, built-ins, bathroom furniture, furnishing" },
+        { label: "Building", value: "Hotel conversion, 16 apartments, 2 restaurants" },
+        { label: "Client", value: "Group company" },
+        { label: "Manufacturing", value: "Limani" },
+        { label: "Year", value: "TO_VERIFY" },
+      ],
+    },
+  },
+  {
+    id: "altstadt",
+    slug: { de: "altstadthaus-5-wohnungen", en: "old-town-house-5-apartments" },
+    verification: "pending",
+    title: { de: "Altstadthaus mit 5 Wohnungen", en: "Old-town house with 5 apartments" },
+    category: "interiors",
+    type: { de: "Sanierung, denkmalgeschützt", en: "Renovation, listed building" },
+    location: { de: "Aargau", en: "Aargau" },
+    image: "altstadt-kitchen",
+    gallery: ["altstadt-kitchen", "altstadt-living", "altstadt-bedroom", "altstadt-attic", "altstadt-bath", "altstadt-stair"],
+    teaser: { de: "Wohnküchen mit Steinabdeckung, Einbauschränke und Bäder in einer denkmalgeschützten Altstadtliegenschaft.", en: "Living kitchens with stone worktops, fitted wardrobes and bathrooms in a listed old-town property." },
+    intro: {
+      de: [
+        "Fünf Wohnungen über einem Restaurant in einer denkmalgeschützten Altstadtliegenschaft. Fischgrätparkett, freigelegtes Gebälk und Bruchsteinmauerwerk bleiben; der Ausbau setzt dagegen ruhige, neue Flächen.",
+        "Wohnküchen mit Steinabdeckung, Einbauschränke im Schlafzimmer, neue Bäder mit bodenebener Dusche. Unter dem Dach eine Küche zwischen den alten Sparren.",
+      ],
+      en: [
+        "Five apartments above a restaurant in a listed old-town property. Herringbone parquet, exposed beams and rubble-stone walls stay; the fit-out sets calm new surfaces against them.",
+        "Living kitchens with stone worktops, fitted wardrobes in the bedroom, new bathrooms with level-access showers. Under the roof a kitchen between the old rafters.",
+      ],
+    },
+    facts: {
+      de: [
+        { label: "Leistungen", value: "Wohnküchen, Einbauschränke, Einbauten, Badmöbel" },
+        { label: "Objekt", value: "Altstadtliegenschaft, 5 Wohnungen, Restaurant" },
+        { label: "Bauherrschaft", value: "Unternehmensgruppe" },
+        { label: "Fertigung", value: "Limani" },
+        { label: "Jahr", value: "TO_VERIFY" },
+      ],
+      en: [
+        { label: "Scope", value: "Living kitchens, fitted wardrobes, built-ins, bathroom furniture" },
+        { label: "Building", value: "Old-town property, 5 apartments, restaurant" },
+        { label: "Client", value: "Group company" },
         { label: "Manufacturing", value: "Limani" },
         { label: "Year", value: "TO_VERIFY" },
       ],
