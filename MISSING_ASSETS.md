@@ -31,7 +31,7 @@ Everything below is marked in the code as `TO_VERIFY`, `CONCEPT_IMAGE` or `REAL_
 
 ## Reference photography: intake rule
 
-GH sends further reference photos element by element (doors, wine cellars, wardrobes, etc.). For each batch: select, light grade, add to `images` with a `real(...)` entry, attach to an existing project or create a new one with `verification: "pending"` until scope, owner consent and year are stated. Private homes carry «Bauherrschaft: Privat». Never name a client.
+Since 20.10.2026 references are shown by element on one page (`/de/arbeiten`, `/en/work`; `site.ts → workGroups`), not as project pages: no addresses, no clients, no years. The context label under each image names only the building type (`workContexts`). The `projects` array stays in `site.ts` as the internal record (scope, owner consent, year) and is not rendered. For each new photo batch: select, light grade, add a `real(...)` entry whose alt text starts with the context prefix («Villa: …», «Büro: …»), then place the id in the fitting group(s). Never name a client.
 
 ## Photography still required (REAL_IMAGE_REQUIRED)
 
