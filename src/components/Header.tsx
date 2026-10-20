@@ -13,7 +13,6 @@ import {
   expertiseSlugs,
   type SectionKey,
 } from "@/lib/routes";
-import { projectFromSlug } from "@/content/site";
 
 type Props = {
   locale: Locale;
@@ -34,10 +33,6 @@ function switchHref(pathname: string, locale: Locale): string {
   if (section === "expertise" && slug) {
     const key = expertiseFromSlug(locale, slug);
     if (key) return href(target, "expertise", expertiseSlugs[key][target]);
-  }
-  if (section === "projects" && slug) {
-    const p = projectFromSlug(locale, slug);
-    if (p) return href(target, "projects", p.slug[target]);
   }
   return href(target, section);
 }

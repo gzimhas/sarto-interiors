@@ -9,5 +9,5 @@ export function getDictionary(locale: Locale): Dictionary {
   return dictionaries[locale];
 }
 
-export { site, images, projects, projectFromSlug, isPublished } from "./site";
+export { site, images, workGroups, workHighlights, workContext, workCaption } from "./site";
 export type * from "./types";

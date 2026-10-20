@@ -106,12 +106,14 @@ export const images: Record<string, ImageAsset> = Object.fromEntries(
     real("efh-bar", 1200, 1600, "cocoa", "Einfamilienhaus: Bar in dunklem Holz", "Family house: bar in dark wood"),
 
     /* Reference: advisory offices, 13 locations (office) */
-    real("office-shelving", 1600, 1200, "oak", "Beratungsbüro: Sitzungszimmer mit Regalwand aus Eiche, beleuchteten Fächern und Glastüre zur Teeküche", "Advisory office: meeting room with oak shelving wall, lit compartments and glass door to the pantry"),
-    real("office-kitchen", 1200, 1600, "oak", "Beratungsbüro: Teeküche ganz in Eiche mit schwarzer Abdeckung", "Advisory office: pantry entirely in oak with black worktop"),
-    real("office-meeting", 1600, 1200, "oak", "Beratungsbüro: Sitzungszimmer mit Regalwand, Sideboard und Akustikdecke", "Advisory office: meeting room with shelving wall, sideboard and acoustic ceiling"),
-    real("office-dark", 1200, 1600, "cocoa", "Beratungsbüro: Besprechungsraum mit Lamellenwand und Schrankfront in dunkler Esche", "Advisory office: meeting room with slatted wall and cabinet front in dark ash"),
-    real("office-open", 1600, 1200, "oak", "Beratungsbüro: Arbeitsbereich mit Schrankwand, Regal und Akustiklamellen aus Eiche", "Advisory office: workspace with wardrobe wall, shelving and oak acoustic slats"),
-    real("office-reception", 1024, 768, "stone", "Beratungsbüro: Empfangstheke aus Schwarzstahl und hellem Holz", "Advisory office: reception desk in blackened steel and light wood"),
+    real("office-shelving", 2048, 1536, "oak", "Büro: Sitzungszimmer mit Regalwand aus Eiche, beleuchteten Fächern und Glastüre zur Teeküche", "Office: meeting room with oak shelving wall, lit compartments and glass door to the pantry"),
+    real("office-kitchen", 1536, 2048, "oak", "Büro: Teeküche ganz in Eiche mit schwarzer Abdeckung", "Office: pantry entirely in oak with black worktop"),
+    real("office-meeting", 2048, 1536, "oak", "Büro: Sitzungszimmer mit Regalwand, Sideboard und Akustikdecke", "Office: meeting room with shelving wall, sideboard and acoustic ceiling"),
+    real("office-dark", 1536, 2048, "cocoa", "Büro: Besprechungsraum mit Lamellenwand und Schrankfront in dunkler Esche", "Office: meeting room with slatted wall and cabinet front in dark ash"),
+    real("office-open", 2048, 1536, "oak", "Büro: Arbeitsbereich mit Schrankwand, Regal und Akustiklamellen aus Eiche", "Office: workspace with wardrobe wall, shelving and oak acoustic slats"),
+    real("office-entrance", 1536, 2048, "oak", "Büro: Garderobe mit gepolsterter Sitznische und Marmorkonsole", "Office: cloakroom with upholstered seating niche and marble console"),
+    real("office-hall", 2048, 1536, "stone-light", "Büro: Korridor mit Glastüren, Konsole aus Marmor und Messing, Schrankwand", "Office: corridor with glass doors, marble and brass console, wardrobe wall"),
+    real("office-windows", 2048, 1536, "stone-light", "Büro: Sitzungszimmer mit Heizkörperverkleidungen aus Schwarzstahl", "Office: meeting room with blackened-steel radiator covers"),
 
     /* Reference: development, 58 apartments (ueberbauung58) */
     real("ueberbauung58-divider", 2800, 1867, "ivory", "Überbauung: Raumteiler mit Regal, Schrankwand und Esstisch im Studio", "Development: room divider with shelving, wardrobe wall and dining table in the studio"),
@@ -575,3 +577,55 @@ export function isPublished(p: Project): boolean {
 export function projectFromSlug(locale: "de" | "en", slug: string): Project | null {
   return projects.find((p) => p.slug[locale] === slug) ?? null;
 }
+
+/* ------------------------------------------------------------------ */
+/* Work: what has been built, grouped by element                        */
+/* ------------------------------------------------------------------ */
+
+/** Context label per image prefix: the kind of building, never the place or the client. */
+export const workContexts: Record<string, Localized> = {
+  villa: { de: "Villa", en: "Villa" },
+  chalet: { de: "Chalet", en: "Chalet" },
+  efh: { de: "Einfamilienhaus", en: "Family house" },
+  ueberbauung58: { de: "Wohnüberbauung, 58 Wohnungen", en: "Development, 58 apartments" },
+  ueberbauung: { de: "Wohnüberbauung am See", en: "Lakeside development" },
+  mfh9: { de: "Mehrfamilienhaus", en: "Apartment building" },
+  mfh: { de: "Mehrfamilienhaus", en: "Apartment building" },
+  hotel: { de: "Hotelumnutzung", en: "Hotel conversion" },
+  altstadt: { de: "Altstadthaus, denkmalgeschützt", en: "Listed old-town house" },
+  office: { de: "Büro", en: "Office" },
+};
+
+export function workContext(imageId: string, locale: "de" | "en"): string {
+  const key = Object.keys(workContexts)
+    .sort((a, b) => b.length - a.length)
+    .find((k) => imageId.startsWith(k + "-"));
+  return key ? workContexts[key][locale] : "";
+}
+
+/** Caption = alt text without the context prefix. */
+export function workCaption(imageId: string, locale: "de" | "en"): string {
+  const alt = images[imageId]?.alt[locale] ?? "";
+  const c = alt.includes(": ") ? alt.slice(alt.indexOf(": ") + 2) : alt;
+  return c.charAt(0).toUpperCase() + c.slice(1);
+}
+
+export type WorkGroup = { id: string; images: string[] };
+
+export const workGroups: WorkGroup[] = [
+  { id: "kitchens", images: ["villa-kitchen", "efh-kitchen", "chalet-kitchen", "ueberbauung58-kitchen", "ueberbauung-06", "altstadt-kitchen", "ueberbauung58-kitchen-view", "mfh9-07", "altstadt-attic", "hotel-kitchen", "office-kitchen", "ueberbauung58-tap"] },
+  { id: "wardrobes", images: ["chalet-wardrobe", "efh-wardrobe", "villa-glass", "efh-wardrobe-open", "chalet-bedroom", "ueberbauung58-wardrobe", "efh-wall", "ueberbauung58-studio", "mfh9-13", "altstadt-bedroom", "ueberbauung-10", "mfh-13"] },
+  { id: "bathrooms", images: ["efh-bath", "efh-tap", "villa-vanity", "chalet-bath", "ueberbauung58-bath", "chalet-vanity", "mfh9-20", "ueberbauung58-shower", "hotel-bath", "mfh-17", "altstadt-bath", "efh-tub"] },
+  { id: "interiors", images: ["villa-hall", "efh-corridor", "villa-gallery", "chalet-door", "efh-switch", "villa-shelves", "villa-entrance", "villa-living", "altstadt-living", "hotel-truss", "ueberbauung58-divider", "ueberbauung58-shelf"] },
+  { id: "wine", images: ["villa-wine", "efh-bar"] },
+  { id: "workplace", images: ["office-shelving", "office-kitchen", "office-meeting", "office-entrance", "office-dark", "office-hall", "office-open", "office-windows"] },
+  { id: "series", images: ["ueberbauung58-living", "ueberbauung58-kitchen-l", "mfh9-08", "ueberbauung-04", "hotel-living", "mfh-09", "mfh9-10", "ueberbauung-09"] },
+];
+
+/** Homepage strip: one image per theme, linking into the work page. */
+export const workHighlights: { image: string; group: string }[] = [
+  { image: "villa-wine", group: "wine" },
+  { image: "efh-wardrobe", group: "wardrobes" },
+  { image: "ueberbauung58-divider", group: "series" },
+  { image: "office-shelving", group: "workplace" },
+];

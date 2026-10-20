@@ -6,7 +6,7 @@ import type { Locale } from "./i18n";
  */
 export const sectionSlugs = {
   home: { de: "", en: "" },
-  projects: { de: "projekte", en: "projects" },
+  projects: { de: "arbeiten", en: "work" },
   expertise: { de: "leistungen", en: "expertise" },
   professionals: { de: "fuer-architekten", en: "for-architects" },
   developers: { de: "fuer-entwickler", en: "for-developers" },

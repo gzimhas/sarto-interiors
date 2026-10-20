@@ -4,7 +4,7 @@ import { Reveal } from "../Reveal";
 import { Action, Container, Eyebrow, Section } from "../ui";
 import type { Locale } from "@/lib/i18n";
 import { expertiseHref, href, type ExpertiseKey } from "@/lib/routes";
-import { getDictionary, projects } from "@/content";
+import { getDictionary, workCaption, workContext, workHighlights } from "@/content";
 import type { ProcessStep, Project, ServiceRole, ShowroomZone } from "@/content/types";
 
 /* ---------------- Expertise grid (home + expertise index) ---------------- */
@@ -119,24 +119,22 @@ export function ZoneList({ zones, locale, compact = false }: { zones: ShowroomZo
   );
 }
 
-/* ---------------- Project cards ---------------- */
-export function ProjectCards({ locale, limit, items }: { locale: Locale; limit?: number; items?: Project[] }) {
+/* ---------------- Work strip: one image per theme, into the work page ---------------- */
+export function WorkStrip({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
-  const source = items ?? projects;
-  const list = limit ? source.slice(0, limit) : source;
   return (
     <ul className="grid gap-x-8 gap-y-14 md:grid-cols-12">
-      {list.map((p, i) => {
+      {workHighlights.map((w, i) => {
         const k = i % 4;
         const wide = k === 0;
         const col = k === 0 ? "md:col-span-7" : k === 1 ? "md:col-span-5 md:pt-24" : k === 2 ? "md:col-span-5 md:col-start-2" : "md:col-span-6 md:col-start-7 md:pt-24";
         return (
-          <Reveal as="li" key={p.id} delay={i * 80} className={col}>
+          <Reveal as="li" key={w.image} delay={i * 80} className={col}>
             <article>
-              <Link href={href(locale, "projects", p.slug[locale])} className="group block">
+              <Link href={`${href(locale, "projects")}#${w.group}`} className="group block">
                 <div className="overflow-hidden">
                   <EditorialImage
-                    id={p.image}
+                    id={w.image}
                     locale={locale}
                     ratio={wide ? "16 / 11" : "4 / 5"}
                     sizes="(min-width:768px) 58vw, 100vw"
@@ -144,11 +142,10 @@ export function ProjectCards({ locale, limit, items }: { locale: Locale; limit?:
                   />
                 </div>
                 <div className="mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                  <h3 className="display text-h3">{p.title[locale]}</h3>
-                  <p className="eyebrow text-charcoal/45">{p.type[locale]}</p>
+                  <h3 className="display text-h3">{t.projects.groups[w.group].title}</h3>
+                  <p className="eyebrow text-charcoal/45">{workContext(w.image, locale)}</p>
                 </div>
-                <p className="mt-2 max-w-md text-[0.9375rem] text-charcoal/70">{p.teaser[locale]}</p>
-                {p.verification === "pending" && <p className="mt-2 text-[0.75rem] text-charcoal/50">{t.common.pendingNote}</p>}
+                <p className="mt-2 max-w-md text-[0.9375rem] text-charcoal/70">{workCaption(w.image, locale)}</p>
               </Link>
             </article>
           </Reveal>

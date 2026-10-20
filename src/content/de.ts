@@ -17,7 +17,7 @@ export const de: Dictionary = {
   },
   nav: {
     labels: {
-      projects: "Projekte",
+      projects: "Arbeiten",
       expertise: "Leistungen",
       professionals: "Für Architekten",
       developers: "Für Entwickler",
@@ -72,8 +72,8 @@ export const de: Dictionary = {
         "Kein Raum ist wie der andere. Seine Architektur, seine Materialien und die Menschen, die ihn nutzen, machen ihn einzigartig.",
         "Wir fertigen Einbauten, die sich in dieses Zusammenspiel einfügen. Manchmal als bewusster Akzent. Manchmal so selbstverständlich, als wären sie schon immer Teil des Raums gewesen.",
       ],
-      cta: "Ausgewählte Arbeiten entdecken",
-      note: "Gezeigt werden ausgeführte Projekte mit eigenen Fotografien. Konzeptstudien sind als solche bezeichnet.",
+      cta: "Alle Arbeiten ansehen",
+      note: "Ausgeführte Arbeiten aus der Fertigung von Limani: Villen, Chalets, Wohnüberbauungen, Altstadthäuser, Büros.",
     },
     expertise: {
       eyebrow: "Leistungen",
@@ -140,19 +140,23 @@ export const de: Dictionary = {
     },
   },
   projects: {
-    eyebrow: "Projekte",
-    headline: "Räume mit Handschrift.",
-    intro: "Ausgeführte Arbeiten in Villen, Chalets, Wohnüberbauungen und denkmalgeschützten Altstadthäusern: Küchen, Ankleiden, Weinkeller, Türen, Einbauten und Badmöbel, vom Einzelstück bis zur Serie von 58 Wohnungen und über 15 Büroflächen, gefertigt bei Limani.",
-    note: "Weitere Referenzen werden dokumentiert. Konzeptstudien sind als solche bezeichnet.",
-    filters: {
-      residences: "Wohnbauten",
-      kitchens: "Küchen",
-      wardrobes: "Ankleiden",
-      hospitality: "Hospitality",
-      workplace: "Büro & Gewerbe",
+    eyebrow: "Arbeiten",
+    headline: "Gebaut, nicht nur geplant.",
+    intro: "Was SARTO bereits gefertigt hat, geordnet nach Element statt nach Objekt: Küchen, Ankleiden, Bäder, Türen und Wände, Weinkeller, Büros. Vom Einzelstück in der Villa bis zur Serie über 58 Wohnungen, aus einer Fertigung.",
+    note: "Alle Aufnahmen zeigen ausgeführte Arbeiten aus der Fertigung von Limani. Objektart statt Adresse: Unsere Bauherren bleiben privat.",
+    experience: {
+      label: "Erfahrung",
+      items: ["Villen und Chalets", "Wohnüberbauungen bis 58 Wohnungen", "Hotelumnutzung und denkmalgeschützte Altstadthäuser", "Über 15 Büro- und Gewerbeflächen"],
     },
-    all: "Alle",
-    empty: "In dieser Kategorie sind noch keine freigegebenen Projekte dokumentiert.",
+    groups: {
+      kitchens: { title: "Küchen", intro: "Grifflos oder mit Profil, Insel oder Zeile, Nussbaum, Eiche, Lack oder Schwarz. Stein auf der Insel, Stein an der Wand, Licht unter dem Hängeschrank." },
+      wardrobes: { title: "Ankleiden und Schränke", intro: "Begehbar mit beleuchteten Fächern, hinter Glas mit Schwarzstahlrahmen, als Schrankwand mit Bettnische oder unter der Dachschräge." },
+      bathrooms: { title: "Bäder", intro: "Waschtischmöbel unter Spiegelschränken, Doppelwaschtische vor der Spiegelwand, Marmor mit Bronze, Stein mit hellem Lack." },
+      interiors: { title: "Türen, Wände und Einbauten", intro: "Raumhohe Türen in einer Flucht mit der Wand. Verkleidungen, in denen Schalter und Technik verschwinden. Regale, Bibliotheken, Raumteiler." },
+      wine: { title: "Weinkeller und Bar", intro: "Flaschenwände aus Schwarzstahl, Bars in dunklem Holz, Weinkühler hinter Glas." },
+      workplace: { title: "Büro und Empfang", intro: "Ein Ausbausystem für Sitzungszimmer, Teeküchen, Garderoben und Empfang: Regalwände mit Licht, Lüftungsgitter für die Technik, Akustiklamellen, Glastüren." },
+      series: { title: "In Serie", intro: "Dasselbe Detail in 58 Wohnungen, angepasst an jeden Grundriss. Küchen, Bäder und Einbauten als Standard, der wie Mass aussieht." },
+    },
   },
   expertise: {
     eyebrow: "Leistungen",

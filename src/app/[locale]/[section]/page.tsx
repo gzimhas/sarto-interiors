@@ -6,7 +6,7 @@ import { DevelopersPage } from "@/components/pages/DevelopersPage";
 import { ExpertiseIndexPage } from "@/components/pages/ExpertisePages";
 import { LegalPage } from "@/components/pages/LegalPage";
 import { ProfessionalsPage } from "@/components/pages/ProfessionalsPage";
-import { ProjectsPage } from "@/components/pages/ProjectsPage";
+import { WorkPage } from "@/components/pages/WorkPage";
 import { ShowroomPage } from "@/components/pages/ShowroomPage";
 import { StoryPage } from "@/components/pages/StoryPage";
 import { getDictionary } from "@/content";
@@ -73,7 +73,7 @@ export default async function SectionPage({ params }: { params: Params }) {
 
   switch (key) {
     case "projects":
-      return <ProjectsPage locale={locale} />;
+      return <WorkPage locale={locale} />;
     case "expertise":
       return <ExpertiseIndexPage locale={locale} />;
     case "professionals":

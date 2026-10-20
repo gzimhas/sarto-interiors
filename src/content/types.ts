@@ -178,9 +178,10 @@ export type Dictionary = {
     headline: string;
     intro: string;
     note: string;
-    filters: Record<string, string>;
-    all: string;
-    empty: string;
+    /** Breadth of experience, shown as a strip. */
+    experience: { label: string; items: string[] };
+    /** Work grouped by element; keys match workGroups ids. */
+    groups: Record<string, { title: string; intro: string }>;
   };
   expertise: {
     eyebrow: string;

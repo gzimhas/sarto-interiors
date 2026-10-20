@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Hero } from "@/components/sections/Hero";
-import { AudienceSplit, ExpertiseGrid, FinalCta, ProjectCards, ZoneList } from "@/components/sections/Shared";
+import { AudienceSplit, ExpertiseGrid, FinalCta, WorkStrip, ZoneList } from "@/components/sections/Shared";
 import { EditorialImage } from "@/components/EditorialImage";
 import { Reveal } from "@/components/Reveal";
 import { Action, Container, Eyebrow, Section } from "@/components/ui";
@@ -49,7 +49,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               ))}
             </div>
           </Reveal>
-          <ProjectCards locale={locale} limit={4} />
+          <WorkStrip locale={locale} />
           <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
             <Action href={href(locale, "projects")}>{h.work.cta}</Action>
             <p className="max-w-md text-[0.8125rem] text-charcoal/55">{h.work.note}</p>

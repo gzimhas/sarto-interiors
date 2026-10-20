@@ -15,7 +15,7 @@ export const en: Dictionary = {
   },
   nav: {
     labels: {
-      projects: "Projects",
+      projects: "Work",
       expertise: "Expertise",
       professionals: "For Architects",
       developers: "For Developers",
@@ -70,8 +70,8 @@ export const en: Dictionary = {
         "No two spaces are alike. Architecture, materials and the people who live within them give each space its own identity.",
         "We create fitted interiors that belong to their surroundings. Sometimes as a defining feature. Sometimes so naturally that they feel as though they have always been there.",
       ],
-      cta: "Explore selected work",
-      note: "Executed projects with our own photography. Concept studies are labelled as such.",
+      cta: "See all work",
+      note: "Executed work from the Limani workshop: villas, chalets, residential developments, old-town houses, offices.",
     },
     expertise: {
       eyebrow: "Expertise",
@@ -138,19 +138,23 @@ export const en: Dictionary = {
     },
   },
   projects: {
-    eyebrow: "Projects",
-    headline: "Spaces with character.",
-    intro: "Executed work in private villas, chalets, residential developments and listed old-town houses: kitchens, dressing rooms, wine cellars, doors, built-ins and bathroom furniture, from a single piece to a series of 58 apartments and more than 15 offices, made by Limani.",
-    note: "Further references are being documented. Concept studies are labelled as such.",
-    filters: {
-      residences: "Residential",
-      kitchens: "Kitchens",
-      wardrobes: "Wardrobes",
-      hospitality: "Hospitality",
-      workplace: "Workplace & Commercial",
+    eyebrow: "Work",
+    headline: "Built, not just planned.",
+    intro: "What SARTO has already made, ordered by element rather than by building: kitchens, dressing rooms, bathrooms, doors and walls, wine cellars, offices. From a single piece in a villa to a series across 58 apartments, from one workshop.",
+    note: "All photographs show executed work from the Limani workshop. Building type instead of address: our clients stay private.",
+    experience: {
+      label: "Experience",
+      items: ["Villas and chalets", "Residential developments up to 58 apartments", "Hotel conversion and listed old-town houses", "More than 15 office and commercial spaces"],
     },
-    all: "All",
-    empty: "No cleared projects are documented in this category yet.",
+    groups: {
+      kitchens: { title: "Kitchens", intro: "Handleless or with a profile, island or run, walnut, oak, lacquer or black. Stone on the island, stone on the wall, light under the wall units." },
+      wardrobes: { title: "Dressing rooms and wardrobes", intro: "Walk-in with lit compartments, behind glass in blackened-steel frames, as a wardrobe wall with bed niche or under the roof slope." },
+      bathrooms: { title: "Bathrooms", intro: "Vanity units under mirror cabinets, double vanities in front of a mirror wall, marble with bronze, stone with light lacquer." },
+      interiors: { title: "Doors, walls and built-ins", intro: "Full-height doors flush with the wall. Panelling in which switches and services disappear. Shelving, libraries, room dividers." },
+      wine: { title: "Wine cellar and bar", intro: "Bottle walls in blackened steel, bars in dark wood, wine coolers behind glass." },
+      workplace: { title: "Office and reception", intro: "One fit-out system for meeting rooms, pantries, cloakrooms and reception: lit shelving walls, ventilation grilles for the services, acoustic slats, glass doors." },
+      series: { title: "In series", intro: "The same detail in 58 apartments, adapted to every floor plan. Kitchens, bathrooms and built-ins as a standard that looks bespoke." },
+    },
   },
   expertise: {
     eyebrow: "Expertise",
